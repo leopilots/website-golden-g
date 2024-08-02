@@ -4,15 +4,8 @@
     /* header */
     header { margin-bottom: 20px; }
     header h1 { font-size: 1.7rem; }
+    .menu-btn { display: block; }
     /* navegation */
-    .menu-btn {
-        font-size: 2rem;
-        display: block;
-      }
-    .menu-btn:hover {
-        transition: 0.5s;
-        opacity: 0.5;
-    }
     .nav-main ul.nav-menu {
         display: block;
         position: absolute;
@@ -27,6 +20,7 @@
         transform: translateX(-730px);
         transition: transform 0.5s ease-in-out;
         margin-top: 0px; /**/
+        z-index: 1; /**/
     }
     .nav-main ul.nav-menu li {
         padding: 20px;

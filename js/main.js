@@ -1,13 +1,16 @@
 //- terms
 window.onload = function() {
   var modal = document.getElementById('terms-termsModal');
+  var body = document.body;
   modal.style.display = 'block';
+  body.classList.add('no-scroll');
 
   var acceptBtn = document.getElementById('terms-acceptBtn');
   var rejectBtn = document.getElementById('terms-rejectBtn');
 
   acceptBtn.onclick = function() {
     modal.style.display = 'none';
+    body.classList.remove('no-scroll');
   }
   rejectBtn.onclick = function() {
     window.location.href = 'https://www.google.com';
@@ -17,6 +20,8 @@ window.onload = function() {
 //- navegation
 document.querySelector(".menu-btn").addEventListener("click", () => {
   document.querySelector(".nav-menu").classList.toggle("show");
+  document.body.classList.toggle("no-scroll");
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 //- most s-products
