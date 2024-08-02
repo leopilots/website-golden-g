@@ -1,9 +1,10 @@
 // navegation
 document.querySelector(".menu-btn").addEventListener("click", () => {
   document.querySelector(".nav-menu").classList.toggle("show");
+  /*
   document.querySelector(".fa-house").classList.toggle("hidden");
   document.querySelector(".fa-cart-shopping").classList.toggle("hidden");
-  document.querySelector(".fa-tags").classList.toggle("hidden");
+  document.querySelector(".fa-tags").classList.toggle("hidden");*/
 });
 
 // most s-products
