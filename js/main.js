@@ -1,13 +1,25 @@
-// navegation
+//- terms
+window.onload = function() {
+  var modal = document.getElementById('terms-termsModal');
+  modal.style.display = 'block';
+
+  var acceptBtn = document.getElementById('terms-acceptBtn');
+  var rejectBtn = document.getElementById('terms-rejectBtn');
+
+  acceptBtn.onclick = function() {
+    modal.style.display = 'none';
+  }
+  rejectBtn.onclick = function() {
+    window.location.href = 'https://www.google.com';
+  }
+}
+
+//- navegation
 document.querySelector(".menu-btn").addEventListener("click", () => {
   document.querySelector(".nav-menu").classList.toggle("show");
-  /*
-  document.querySelector(".fa-house").classList.toggle("hidden");
-  document.querySelector(".fa-cart-shopping").classList.toggle("hidden");
-  document.querySelector(".fa-tags").classList.toggle("hidden");*/
 });
 
-// most s-products
+//- most s-products
 const sliderWrapper = document.querySelector('.sp-slider-wrapper');
 const slides = document.querySelectorAll('.sp-slider-wrapper img');
 const totalSlides = slides.length;
