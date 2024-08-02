@@ -16,6 +16,48 @@ body {
 
 .hidden { display: none; }
 
+
+/* terms */
+.terms-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3; /*1*/
+}
+.terms-modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 60px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.terms-modal-buttons { margin-top: 20px; }
+.terms-modal-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+.terms-modal-buttons button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    border-radius: 25px;
+    color: #000;
+}
+.terms-modal-buttons button:hover {
+    transition: 0.5s;
+    background-color: #000;
+    color: #fff;
+}
+
 /* offer */
 .offer {
     text-align: center;
@@ -172,6 +214,19 @@ header h1 {
 .sp-slide:hover .sp-overlay { opacity: 1;  }
 
 /* footer */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 20px;
+}   
+footer a {
+    text-decoration: none;
+    color: #fff;
+}
+footer a:hover { 
+    transition: 0.5s;
+    opacity: 0.5;
+}
 .footer-back {
     background-color: #000;
     display: flex;
