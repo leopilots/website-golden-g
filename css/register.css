@@ -1,0 +1,104 @@
+.register-main form {
+	padding: 30px 20px;
+	background-color: #212121;
+	margin: calc(25% + 200px);
+	margin-top: 70px;
+	margin-bottom: 30px;
+    border-radius: 25px;
+}
+.register-main h1 {
+    font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	padding: 12px;
+	color: #fff
+}
+.register-main input {
+    font-family: 'Montserrat', sans-serif;
+	width: calc(100% - 20px);
+	padding: 9px;
+	margin: auto;
+	margin-top: 12px;
+	font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+.register-main input[type='submit'] {
+    font-family: 'Montserrat', sans-serif;
+	background-color: #000;
+	color: #fff;
+	width: calc(80% - 20px);
+	margin: 0 10%;
+	margin-top: 22px;
+	border: 1px solid #fff;
+}
+.register-main input[type='submit']:hover {
+    transition: 0.5s;
+    opacity: 0.5;
+}
+
+/* alert */
+.r-alert-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+.r-alert {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 300px;
+    border-radius: 8px;
+    color: #fff;
+}
+.r-alert-message {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.r-alert-buttons button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: #555;
+    color: #fff;
+    z-index: 2;
+}
+.r-alert-buttons button:hover { transition: 0.5s; opacity: 0.5;}
+.r-alert-buttons .r-alert-accept { background-color: #4CAF50; color: #fff; }
+.r-alert-buttons .r-alert-home { background-color: #f44336; color: #fff; }
+
+footer {
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000
+}
+
+@media (max-width: 1055px) {
+    .register-main form {
+        width: 80%;
+        margin: auto;
+    }
+    .register-main h1 { font-size: 1.4rem; }
+    .register-main input { font-size: 0.8rem; }
+    .register-main p { font-size: 0.8rem; } 
+    .register-main a { font-size: 0.8rem; }
+
+    .r-alert { border: 2px solid #fff; }
+    .r-alert-buttons button { margin: 10px 10px ;}
+}

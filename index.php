@@ -1,0 +1,118 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Está es una empresa dedicada al dropshipping.">
+    <link rel="icon" type="image/ico" href="img/brand/favicon.ico">
+    <title>Golden G | Inicio</title>
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+    <!-- terms -->
+    <div id="terms-termsModal" class="terms-modal">
+        <div class="terms-modal-content">
+            <h2>Términos y Condiciones</h2>
+            <p>Por favor, lea y acepte nuestros términos y condiciones para continuar utilizando este sitio web.</p>
+            <p><a href="terms.html" target="_blank">Leer Términos y Condiciones</a></p>
+            <div class="terms-modal-buttons">
+                <button id="terms-acceptBtn">Aceptar</button>
+                <button id="terms-rejectBtn">Rechazar</button>
+            </div>
+        </div>
+    </div>
+    <!-- offer -->
+    <div class="offer">
+        <div>
+            <p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p>
+        </div>
+    </div>
+    <!-- header -->
+    <header>
+        <div class="header-container">
+            <h1>Golden G</h1>
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- navegation -->
+    <nav class="nav-main">
+        <ul class="nav-menu">
+            <li>
+                <a href="index.php">Inicio</a>
+            </li>
+            <li>
+                <a href="#">Productos</a>
+            </li>
+            <li>
+                <a href="#">Más vendidos</a>
+            </li>
+            <li>
+                <a href="#">Conocer más</a>
+            </li>
+            <li>
+                <a href="account.php">Mi cuenta</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- about -->
+    <div class="about-main">
+        <div class="about-img">
+            <img src="img/brand/favicon.ico" alt="brand">
+        </div>
+        <div class="about-text">
+            <p>En Golgen G, nos especializamos en la venta de una amplia gama de productos de vestimen a través del modelo de dropshipping. 
+                Nos comprometemos a ofrecer a nuestros clientes lo mejor en términos de seguridad y calidad, asegurando que cada 
+                experiencia de compra sea satisfactoria y confiable.</p>
+            <a href="#">Conocer más</a>
+        </div>
+    </div>
+    <!-- main -->
+    <main>
+        <!-- most s-products -->
+         <section>
+            <div class="s-products">
+                <h2>Productos más vendidos</h2>
+                <div class="sp-slider">
+                    <div class="sp-slider-wrapper">
+                      <div class="sp-slide">
+                        <img src="https://wearwulfit.com/cdn/shop/products/mockup-7cda68ea_1200x1200.png?v=1595982210" alt="Producto N°1"></a>
+                        <a href="#" class="sp-overlay">Hoodie Unisex Antisocial Soju Club<br>120€ -20%<br>196€</a>
+                      </div>
+                      <div class="sp-slide">
+                        <img src="https://homeboy.eu/cdn/shop/files/01PA1079-G-79X-TRAMONSTERGOTHICMOON_1024x1024.png?v=1702895315" alt="Producto N°2">
+                        <a href="#" class="sp-overlay">Jeans Cargo Female<br>100€ -20%<br>100€</a>
+                      </div>
+                      <div class="sp-slide">
+                        <img src="https://bbcicecream.eu/cdn/shop/files/B24101_CREAM_01-1.png?v=1707907203" alt="Producto N°3">
+                        <a href="#" class="sp-overlay">Jacket Varsity Unisex<br>200€ -20%<br>160€</a>
+                      </div>
+                    </div>
+                </div>
+                <a href="#" class="sp-a">Más Productos</a>
+            </div>
+         </section>
+    </main>
+    <!-- footer -->
+    <footer> 
+        <div class="footer-back">
+            <p>© 2024 Copyright:</p>
+            <h2>Golden G</h2>
+        </div>
+        <div>
+            <a href="#">Términos y condiciones</a>
+        </div>
+    </footer>
+    <!-- javascript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
