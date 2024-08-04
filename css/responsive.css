@@ -24,7 +24,7 @@
         transform: translateX(-730px);
         transition: transform 0.5s ease-in-out;
         margin-top: 0px; /**/
-        z-index: 1; /**/
+        z-index: 1000; /**/
     }
     .nav-main ul.nav-menu li {
         padding: 20px;

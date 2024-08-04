@@ -39,10 +39,10 @@
                 <a href="#">Productos</a>
             </li>
             <li>
-                <a href="#">Más vendidos</a>
+                <a href="topproducts.php">Más vendidos</a>
             </li>
             <li>
-                <a href="#">Conocer más</a>
+                <a href="about.php">Conocer más</a>
             </li>
             <li>
                 <a href="account.php">Mi cuenta</a>

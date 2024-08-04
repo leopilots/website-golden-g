@@ -54,10 +54,10 @@ session_start();
                 <a href="#">Productos</a>
             </li>
             <li>
-                <a href="#">Más vendidos</a>
+                <a href="topproducts.php">Más vendidos</a>
             </li>
             <li>
-                <a href="#">Conocer más</a>
+                <a href="about.php">Conocer más</a>
             </li>
             <li>
                 <a href="account.php">Mi cuenta</a>
@@ -73,7 +73,7 @@ session_start();
             <p>En Golgen G, nos especializamos en la venta de una amplia gama de productos de vestimen a través del modelo de dropshipping. 
                 Nos comprometemos a ofrecer a nuestros clientes lo mejor en términos de seguridad y calidad, asegurando que cada 
                 experiencia de compra sea satisfactoria y confiable.</p>
-            <a href="#">Conocer más</a>
+            <a href="about.php">Conocer más</a>
         </div>
     </div>
     <!-- main -->
@@ -85,16 +85,16 @@ session_start();
                 <div class="sp-slider">
                     <div class="sp-slider-wrapper">
                       <div class="sp-slide">
-                        <img src="https://wearwulfit.com/cdn/shop/products/mockup-7cda68ea_1200x1200.png?v=1595982210" alt="Producto N°1"></a>
-                        <a href="#" class="sp-overlay">Hoodie Unisex Antisocial Soju Club<br>120€ -20%<br>196€</a>
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S52c4feac78a0485fb00ad12abb1cd3c3S/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp" alt="Producto N°1"></a>
+                        <a href="topproducts.php" class="sp-overlay">Camiseta Antisocial media Club<br>€120 -20%<br>€96</a>
                       </div>
                       <div class="sp-slide">
-                        <img src="https://homeboy.eu/cdn/shop/files/01PA1079-G-79X-TRAMONSTERGOTHICMOON_1024x1024.png?v=1702895315" alt="Producto N°2">
-                        <a href="#" class="sp-overlay">Jeans Cargo Female<br>100€ -20%<br>100€</a>
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf180df1a5b6c44c8a2a81c54401faa962/Jeans-Retro-y2k-Harajuku-High-Street-Jeans-sueltos-con-bolsillo-de-Hip-Hop-para-hombres-y.jpg_.webp" alt="Producto N°2">
+                        <a href="topproducts.php" class="sp-overlay">Jeans Cargo<br>€100 -20%<br>€80</a>
                       </div>
                       <div class="sp-slide">
-                        <img src="https://bbcicecream.eu/cdn/shop/files/B24101_CREAM_01-1.png?v=1707907203" alt="Producto N°3">
-                        <a href="#" class="sp-overlay">Jacket Varsity Unisex<br>200€ -20%<br>160€</a>
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S71c58d08f19d4ac4943f4b7972a2b9dep/Chaqueta-de-b-isbol-con-capucha-para-hombre-y-mujer-abrigo-grueso-y-c-lido-con.jpg_.webp" alt="Producto N°3">
+                        <a href="topproducts.php" class="sp-overlay">Jacket Varsity<br>€200 -20%<br>€160</a>
                       </div>
                     </div>
                 </div>
