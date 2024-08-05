@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset(€_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id'])) {
     header('Location: login.php'); 
     exit();
 }
@@ -48,6 +48,9 @@ if (!isset(€_SESSION['user_id'])) {
             </li>
         </ul>
     </nav>
+    <main>
+        <h2>Bienvenido, este es tu correo electrónico <?php echo htmlspecialchars($_SESSION['user_email']); ?>!</h2>
+    </main>
     <!-- footer -->
     <footer> 
         <div class="footer-back">

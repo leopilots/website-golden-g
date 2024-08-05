@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset(€_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id'])) { 
     ?>
     <!-- terms -->
     <div id="terms-termsModal" class="terms-modal">
