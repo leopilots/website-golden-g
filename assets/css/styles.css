@@ -124,6 +124,25 @@ header h1 {
     transition: 0.5s;
     opacity: 0.5;
 }
+/* productos */
+.nav-main ul li:hover .nav-hijos {
+	display: block;
+}
+.nav-main .nav-submenu .nav-hijos {
+	display: none;
+	background-color: #fff;
+    border: 2px solid #212121;
+	position: absolute;
+	width: 15%;
+}
+.nav-main .nav-submenu .nav-hijos li {
+	display: block;
+	overflow: hidden;
+	border-bottom: none;
+}
+.nav-main .nav-submenu .nav-hijos li a:hover {
+	display: block;
+}
 
 /* about */
 .about-main {

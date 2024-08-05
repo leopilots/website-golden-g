@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset(€_SESSION['user_id'])) {
     header('Location: login.php'); 
     exit();
 }
@@ -18,8 +18,8 @@ if (!isset($_SESSION['user_id'])) {
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/responsive.css">
 </head>
 <body>
     <!-- header -->
@@ -35,7 +35,7 @@ if (!isset($_SESSION['user_id'])) {
     <nav class="nav-main">
         <ul class="nav-menu">
             <li>
-                <a href="index.php">Inicio</a>
+                <a href="http://localhost/goldeng/">Inicio</a>
             </li>
             <li>
                 <a href="#">Mi Carrito</a>
@@ -44,7 +44,7 @@ if (!isset($_SESSION['user_id'])) {
                 <a href="#">Mis compras</a>
             </li>
             <li>
-                <a href="php/logout.php">Cerrar sesión</a>
+                <a href="http://localhost/goldeng/php/logout.php">Cerrar sesión</a>
             </li>
         </ul>
     </nav>
@@ -59,6 +59,6 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </footer>
     <!-- javascript -->
-    <script src="js/main.js"></script>
+    <script src="http://localhost/goldeng/assets/js/main.js"></script>
 </body>
 </html>

@@ -26,13 +26,13 @@ if (!isset(€_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Está es una empresa dedicada al dropshipping.">
     <link rel="icon" type="image/ico" href="img/brand/favicon.ico">
-    <title>Golden G | Conocer Más</title>
+    <title>Golden G | Ropa de Mujer</title>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/about.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/products.css">
 </head>
 <body>
     <!-- offer -->
@@ -44,6 +44,7 @@ if (!isset(€_SESSION['user_id'])) {
     <!-- header -->
     <header>
         <div class="header-container">
+            <h1>Golden G</h1>
             <div class="menu-btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -73,46 +74,31 @@ if (!isset(€_SESSION['user_id'])) {
             </li>
         </ul>
     </nav>
-    <!-- about more -->
     <main>
-        <div class="about">
-            <img src="img/brand/logo.png" alt="">
-            <p>
-                En Golden G, nos especializamos en la venta de una amplia gama de productos de vestimenta a través 
-                del modelo de dropshipping. Nuestro compromiso es ofrecer a nuestros clientes una experiencia de 
-                compra única y de alta calidad. Para ello, seleccionamos cuidadosamente a nuestros proveedores para 
-                asegurarnos de que cada artículo cumpla con los más altos estándares de calidad y seguridad. Entendemos 
-                la importancia de la confianza al comprar en línea, por lo que nos esforzamos por garantizar una plataforma 
-                segura y transparente. Desde prendas de moda casual hasta ropa más formal, en Golden G ofrecemos opciones 
-                para todos los gustos y necesidades. Además, nos enorgullece proporcionar un servicio al cliente excepcional, 
-                siempre dispuestos a ayudar y resolver cualquier inquietud que nuestros clientes puedan tener. Con cada compra, 
-                buscamos no solo satisfacer, sino superar las expectativas, creando una experiencia de compra positiva y memorable 
-                para cada cliente.
-                <br>
-                Esta empresa fue fundada por Gernot Ramiro, con García Leonardo como desarrollador encargado de la creación y mantenimiento del sitio web.
-            </p>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar productos" onkeyup="filterProducts()">
         </div>
-        <div class="contact">
-            <<div class="contact-container">
-                <h2>CONTÁCTANOS</h2>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo Electrónico:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit">Enviar</button>
-                    </div>
-                </form>
-                <div id="response-message"></div>
+        <h2>ROPA DE MUJER</h2>
+        <div class="catalog-container" id="catalogContainer">
+            <div class="top-p" data-name="Sueter blanco para mujer">
+                <a href="producto4.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/H4be55873dea14405bee18ca1a622b4975.jpg_640x640.jpg_.webp" alt="Producto 4">
+                    <!-- <span class="offer">En Oferta</span> -->
+                </a>
+                <div class="info">
+                    <span class="price">€19.99</span>
+                    <p>Sueter blanco para mujer</p>
+                </div>
+            </div>
+            <div class="top-p" data-name="aop & Za-falda de cintura alta para mujer">
+                <a href="producto9.html">
+                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S829e2a5f7eda4709bff5c7031acfcd08K/Taop-Za-falda-de-cintura-alta-para-mujer-prenda-holgada-e-informal-vers-til-de-longitud.jpg_.webp" alt="Producto 9">
+                    <!-- <span class="offer">En Oferta</span> -->
+                </a>
+                <div class="info">
+                    <span class="price">€39.99</span>
+                    <p>aop & Za-falda de cintura alta para mujer</p>
+                </div>
             </div>
         </div>
     </main>
@@ -127,7 +113,7 @@ if (!isset(€_SESSION['user_id'])) {
         </div>
     </footer>
     <!-- javascript -->
-    <script src="http://localhost/goldeng/assets/js/contact.js"></script>
+    <script src="http://localhost/goldeng/assets/js/products.js"></script>
     <script src="http://localhost/goldeng/assets/js/main.js"></script>
 </body>
 </html>

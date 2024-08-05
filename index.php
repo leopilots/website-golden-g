@@ -13,8 +13,8 @@ session_start();
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/responsive.css">
 </head>
 <body>
     <!-- terms -->
@@ -48,19 +48,23 @@ session_start();
     <nav class="nav-main">
         <ul class="nav-menu">
             <li>
-                <a href="index.php">Inicio</a>
+                <a href="http://localhost/goldeng/">Inicio</a>
             </li>
-            <li>
+            <li class="nav-submenu">
                 <a href="#">Productos</a>
+                <ul class="nav-hijos">
+                    <li><a href="http://localhost/goldeng/products-male.php">Ropa de Hombre</a></li>
+                    <li><a href="http://localhost/goldeng/products-female.php">Ropa de Mujer</a></li>
+                </ul>
             </li>
             <li>
-                <a href="topproducts.php">Más vendidos</a>
+                <a href="http://localhost/goldeng/topproducts.php">Más vendidos</a>
             </li>
             <li>
-                <a href="about.php">Conocer más</a>
+                <a href="http://localhost/goldeng/about.php">Conocer más</a>
             </li>
             <li>
-                <a href="account.php">Mi cuenta</a>
+                <a href="http://localhost/goldeng/account.php">Mi cuenta</a>
             </li>
         </ul>
     </nav>
@@ -73,7 +77,7 @@ session_start();
             <p>En Golgen G, nos especializamos en la venta de una amplia gama de productos de vestimen a través del modelo de dropshipping. 
                 Nos comprometemos a ofrecer a nuestros clientes lo mejor en términos de seguridad y calidad, asegurando que cada 
                 experiencia de compra sea satisfactoria y confiable.</p>
-            <a href="about.php">Conocer más</a>
+            <a href="http://localhost/goldeng/about.php">Conocer más</a>
         </div>
     </div>
     <!-- main -->
@@ -86,19 +90,19 @@ session_start();
                     <div class="sp-slider-wrapper">
                       <div class="sp-slide">
                         <img src="https://ae-pic-a1.aliexpress-media.com/kf/S52c4feac78a0485fb00ad12abb1cd3c3S/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp" alt="Producto N°1"></a>
-                        <a href="topproducts.php" class="sp-overlay">Camiseta Antisocial media Club<br>€120 -20%<br>€96</a>
+                        <a href="http://localhost/goldeng/topproducts.php" class="sp-overlay">Camiseta Antisocial media Club<br>€120 -20%<br>€96</a>
                       </div>
                       <div class="sp-slide">
                         <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf180df1a5b6c44c8a2a81c54401faa962/Jeans-Retro-y2k-Harajuku-High-Street-Jeans-sueltos-con-bolsillo-de-Hip-Hop-para-hombres-y.jpg_.webp" alt="Producto N°2">
-                        <a href="topproducts.php" class="sp-overlay">Jeans Cargo<br>€100 -20%<br>€80</a>
+                        <a href="http://localhost/goldeng/topproducts.php" class="sp-overlay">Jeans Cargo<br>€100 -20%<br>€80</a>
                       </div>
                       <div class="sp-slide">
                         <img src="https://ae-pic-a1.aliexpress-media.com/kf/S71c58d08f19d4ac4943f4b7972a2b9dep/Chaqueta-de-b-isbol-con-capucha-para-hombre-y-mujer-abrigo-grueso-y-c-lido-con.jpg_.webp" alt="Producto N°3">
-                        <a href="topproducts.php" class="sp-overlay">Jacket Varsity<br>€200 -20%<br>€160</a>
+                        <a href="http://localhost/goldeng/topproducts.php" class="sp-overlay">Jacket Varsity<br>€200 -20%<br>€160</a>
                       </div>
                     </div>
                 </div>
-                <a href="#" class="sp-a">Más Productos</a>
+                <a href="http://localhost/goldeng/products-female" class="sp-a">Más Productos</a>
             </div>
          </section>
     </main>
@@ -113,6 +117,6 @@ session_start();
         </div>
     </footer>
     <!-- javascript -->
-    <script src="js/main.js"></script>
+    <script src="http://localhost/goldeng/assets/js/main.js"></script>
 </body>
 </html>

@@ -34,6 +34,12 @@
     .nav-main ul.nav-menu li:last-child { border-bottom: 0; }
     .nav-main ul.nav-menu.show { transform: translateX(-20px); }
     .nav-main ul li a { color: #fff; font-size: 0.8rem; }
+    /* productos */
+    .nav-main .nav-submenu .nav-hijos {
+        background-color: #212121;
+        border: 2px solid #fff;
+        width: auto;
+    }
     /* about */
     .about-main {
         display: block;

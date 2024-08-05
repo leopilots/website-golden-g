@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset(€_SESSION['user_id'])) {
     ?>
     <!-- terms -->
     <div id="terms-termsModal" class="terms-modal">
@@ -30,9 +30,9 @@ if (!isset($_SESSION['user_id'])) {
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/products.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/products.css">
 </head>
 <body>
     <!-- offer -->
@@ -54,19 +54,23 @@ if (!isset($_SESSION['user_id'])) {
     <nav class="nav-main">
         <ul class="nav-menu">
             <li>
-                <a href="index.php">Inicio</a>
+                <a href="http://localhost/goldeng/">Inicio</a>
             </li>
-            <li>
+            <li class="nav-submenu">
                 <a href="#">Productos</a>
+                <ul class="nav-hijos">
+                    <li><a href="http://localhost/goldeng/products-male.php">Ropa de Hombre</a></li>
+                    <li><a href="http://localhost/goldeng/products-female.php">Ropa de Mujer</a></li>
+                </ul>
             </li>
             <li>
-                <a href="topproducts.php">Más vendidos</a>
+                <a href="http://localhost/goldeng/topproducts.php">Más vendidos</a>
             </li>
             <li>
-                <a href="about.php">Conocer más</a>
+                <a href="http://localhost/goldeng/about.php">Conocer más</a>
             </li>
             <li>
-                <a href="account.php">Mi cuenta</a>
+                <a href="http://localhost/goldeng/account.php">Mi cuenta</a>
             </li>
         </ul>
     </nav>
@@ -78,7 +82,7 @@ if (!isset($_SESSION['user_id'])) {
 
         <div class="catalog-container" id="catalogContainer">
             <div class="top-p" data-name="Camiseta Antisocial Media Club">
-                <a href="producto1.html">
+                <a href="http://localhost/goldeng/product/product1.php">
                     <img src="https://ae-pic-a1.aliexpress-media.com/kf/S52c4feac78a0485fb00ad12abb1cd3c3S/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp" alt="Producto 1">
                     <span class="offer">En Oferta</span>
                 </a>
@@ -113,7 +117,7 @@ if (!isset($_SESSION['user_id'])) {
                     <!-- <span class="offer">En Oferta</span> -->
                 </a>
                 <div class="info">
-                    <span class="price">$19.99</span>
+                    <span class="price">€19.99</span>
                     <p>Sueter blanco para mujer</p>
                 </div>
             </div>
@@ -123,7 +127,7 @@ if (!isset($_SESSION['user_id'])) {
                     <!-- <span class="offer">En Oferta</span> -->
                 </a>
                 <div class="info">
-                    <span class="price">$19.99</span>
+                    <span class="price">€19.99</span>
                     <p>Chaqueta universitaria con letras bordadas para hombre y mujer</p>
                 </div>
             </div>
@@ -133,7 +137,7 @@ if (!isset($_SESSION['user_id'])) {
                     <!-- <span class="offer">En Oferta</span> -->
                 </a>
                 <div class="info">
-                    <span class="price">$59.99</span>
+                    <span class="price">€59.99</span>
                     <p>Sturniolo-sudaderas con capucha de Triplets para hombre y mujer</p>
                 </div>
             </div>
@@ -143,7 +147,7 @@ if (!isset($_SESSION['user_id'])) {
                     <!-- <span class="offer">En Oferta</span> -->
                 </a>
                 <div class="info">
-                    <span class="price">$34.99</span>
+                    <span class="price">€34.99</span>
                     <p>Camiseta de estilo Harajuku Y2K para hombre</p>
                 </div>
             </div>
@@ -153,7 +157,7 @@ if (!isset($_SESSION['user_id'])) {
                     <span class="spent">Agotado</span>
                 </a>
                 <div class="info">
-                    <span class="price">$44.99</span>
+                    <span class="price">€44.99</span>
                     <p>EE-pantalones cortos deportivos para hombre</p>
                 </div>
             </div>
@@ -163,7 +167,7 @@ if (!isset($_SESSION['user_id'])) {
                     <!-- <span class="offer">En Oferta</span> -->
                 </a>
                 <div class="info">
-                    <span class="price">$39.99</span>
+                    <span class="price">€39.99</span>
                     <p>aop & Za-falda de cintura alta para mujer</p>
                 </div>
             </div>
@@ -173,7 +177,7 @@ if (!isset($_SESSION['user_id'])) {
                     <span class="spent">Agotado</span>
                 </a>
                 <div class="info">
-                    <span class="price">$54.99</span>
+                    <span class="price">€54.99</span>
                     <p>Sudadera con capucha de Jake Webber Johnnie Guilbert Merch para hombre y mujer</p>
                 </div>
             </div>
@@ -190,7 +194,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </footer>
     <!-- javascript -->
-    <script src="js/products.js"></script>
-    <script src="js/main.js"></script>
+    <script src="http://localhost/goldeng/assets/js/products.js"></script>
+    <script src="http://localhost/goldeng/assets/js/main.js"></script>
 </body>
 </html>

@@ -7,7 +7,6 @@ main {
     align-items: center;
     min-height: 100vh;
 }
-
 .search-bar {
     margin: 20px;
     max-width: 1200px;
@@ -92,6 +91,7 @@ main {
 }
 
 @media (max-width: 1055px) {
+    main h2 { font-family: 'Poppins', sans-serif; font-size: 1rem; }
     .catalog-container {
         grid-template-columns: repeat(2, 1fr);
     }

@@ -9,9 +9,9 @@
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/register.css">
 </head>
 <body>
     <!-- offer -->
@@ -33,19 +33,23 @@
     <nav class="nav-main">
         <ul class="nav-menu">
             <li>
-                <a href="index.php">Inicio</a>
+                <a href="http://localhost/goldeng/">Inicio</a>
             </li>
-            <li>
+            <li class="nav-submenu">
                 <a href="#">Productos</a>
+                <ul class="nav-hijos">
+                    <li><a href="http://localhost/goldeng/products-male.php">Ropa de Hombre</a></li>
+                    <li><a href="http://localhost/goldeng/products-female.php">Ropa de Mujer</a></li>
+                </ul>
             </li>
             <li>
-                <a href="topproducts.php">Más vendidos</a>
+                <a href="http://localhost/goldeng/topproducts.php">Más vendidos</a>
             </li>
             <li>
-                <a href="about.php">Conocer más</a>
+                <a href="http://localhost/goldeng/about.php">Conocer más</a>
             </li>
             <li>
-                <a href="account.php">Mi cuenta</a>
+                <a href="http://localhost/goldeng/account.php">Mi cuenta</a>
             </li>
         </ul>
     </nav>
@@ -72,7 +76,7 @@
         </div>
     </footer>
     <!-- javascript -->
-    <script src="js/main.js"></script>
+    <script src="http://localhost/goldeng/assets/js/main.js"></script>
     <!-- php -->
     <?php 
         include("php/register.php");
