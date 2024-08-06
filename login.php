@@ -16,6 +16,8 @@
 <body>
     <!-- offer -->
     <?php
+    session_start();
+    
     if($_SESSION['user_firstbuy'] == 0) {
         ?>
         <div class="offer">
