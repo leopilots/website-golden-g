@@ -73,6 +73,7 @@
                 <input class="register-n" type="text" name="lastname" placeholder="Apellido" maxlength="50">
                 <input type="email" name="email" placeholder="Correo electrónico" maxlength="255">
                 <input type="password" name="password" placeholder="Contraseña" minlength="8" maxlength="50">
+                <input type="password" name="confirm_password" placeholder="Repetir Contraseña" minlength="8" maxlength="50">
                 <input type="submit" name="register" value="Registrarse">
                 <p style="text-align: center; color: #fff; margin-top: 20px;" >¿Ya tienes una cuenta? Puedes iniciar sesión <a style="color: #ccc" href="./login.php">aquí</a>.</p>
             </form>
