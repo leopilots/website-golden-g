@@ -37,7 +37,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Está es una empresa dedicada al dropshipping.">
-    <link rel="icon" type="image/ico" href="img/brand/favicon.ico">
+    <link rel="icon" type="image/ico" href="http://localhost/goldeng/img/brand/favicon.ico">
     <title>Golden G | <?php echo htmlspecialchars($row['NAME']); ?></title>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
     <!-- offer -->
-    <?php
+   <?php
     if (!isset($_SESSION['user_id'])) {
         ?>
         <div class="offer">
@@ -60,6 +60,12 @@ if (!isset($_SESSION['user_id'])) {
         ?>
         <div class="offer">
             <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div class="offer">
+            <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
         <?php
     }
@@ -116,22 +122,33 @@ if (!isset($_SESSION['user_id'])) {
                 <form>
                     <label for="size">Talla:</label>
                     <select id="size" name="size">
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option> 
+                        <?php if($row['SIZE_XS'] >= 1) { ?> <option value="xs">XS</option> <?php } ?>
+                        <?php if($row['SIZE_S'] >= 1) { ?> <option value="s">S</option> <?php } ?>
+                        <?php if($row['SIZE_M'] >= 1) { ?> <option value="m">M</option> <?php } ?>
+                        <?php if($row['SIZE_L'] >= 1) { ?> <option value="l">L</option> <?php } ?>
+                        <?php if($row['SIZE_XL'] >= 1) { ?> <option value="xl">XL</option> <?php } ?>
                     </select>
                     <div class="details-space"></div>
                     <label for="color">Color:</label>
                     <select id="color" name="color">
-                        <option value="negro">Negro</option>
-                        <option value="blanco">Blanco</option>
+                        <?php if($row['WHITE'] == 1) { ?> <option value="white">Blanco</option> <?php } ?>
+                        <?php if($row['BLACK'] == 1) { ?> <option value="black">Negro</option> <?php } ?>
+                        <?php if($row['BLUE'] == 1) { ?> <option value="negro">Azul</option> <?php } ?>
+                        <?php if($row['RED'] == 1) { ?> <option value="negro">Rojo</option> <?php } ?>
+                        <?php if($row['BROWN'] == 1) { ?> <option value="negro">Café</option> <?php } ?>
+                        <?php if($row['GRAY'] == 1) { ?> <option value="negro">Gris</option> <?php } ?>
+                        <?php if($row['GREEN'] == 1) { ?> <option value="negro">Verde</option> <?php } ?>
+                        <?php if($row['ORANGE'] == 1) { ?> <option value="negro">Naranja</option> <?php } ?>
+                        <?php if($row['PINK'] == 1) { ?> <option value="negro">Rosado</option> <?php } ?>
+                        <?php if($row['YELLOW'] == 1) { ?> <option value="negro">Amarillo</option> <?php } ?>
                     </select>
                     <div class="details-space"></div>
+                    <?php if($row['STOCK'] >= 1) { ?>
                     <label for="quantity">Cantidad:</label>
                     <input type="number" id="quantity" name="quantity" value="1" min="1">
                     <div class="details-space"></div>
                     <button type="submit">Añadir al carrito</button>
+                    <?php } ?>
                 </form>
             </section>
         </div>

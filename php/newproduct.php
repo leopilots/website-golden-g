@@ -11,13 +11,24 @@ if(isset($_POST['createproduct']))
         $image2 = trim($_POST['image2']);
         $image3 = trim($_POST['image3']);
         $description = trim($_POST['description']);
-        $stock = trim($_POST['stock']);
         $size_xs = trim($_POST['xs']);
         $size_s = trim($_POST['s']);
         $size_m = trim($_POST['m']);
         $size_l = trim($_POST['l']);
         $size_xl = trim($_POST['xl']);
+        $stock = $size_xs + $size_s + $size_m + $size_l + $size_xl;
         $price = trim($_POST['price']);
+        $white = trim($_POST['WHITE']);
+        $black = trim($_POST['BLACK']);
+        $blue = trim($_POST['BLUE']);
+        $red = trim($_POST['RED']);
+        $brown = trim($_POST['BROWN']);
+        $gray = trim($_POST['GRAY']);
+        $green = trim($_POST['GREEN']);
+        $orange = trim($_POST['ORANGE']);
+        $pink = trim($_POST['PINK']);
+        $yellow = trim($_POST['YELLOW']);
+        $provider = trim($_POST['provider']);
 
         // Comprobar si el nombre del producto ya existe
         $stmt = $conex->prepare("SELECT COUNT(*) FROM products WHERE NAME = ?");
@@ -43,8 +54,8 @@ if(isset($_POST['createproduct']))
             <?php
         } else {
             // Si el producto no existe, proceder con la inserción
-            $consulta = "INSERT INTO products(NAME, SECTION, IMAGE, IMAGE2, IMAGE3, DESCRIPTION, STOCK, SIZE_XS, SIZE_S, SIZE_M, SIZE_L, SIZE_XL, PRICE) 
-            VALUES ('$name', '$section', '$image1', '$image2', '$image3', '$description', '$stock', '$size_xs', '$size_s', '$size_m', '$size_l', '$size_xl', '$price')";
+            $consulta = "INSERT INTO products(NAME, SECTION, IMAGE, IMAGE2, IMAGE3, DESCRIPTION, STOCK, SIZE_XS, SIZE_S, SIZE_M, SIZE_L, SIZE_XL, PRICE, WHITE, BLACK, BLUE, RED, BROWN, GRAY, GREEN, ORANGE, PINK, YELLOW, PROVIDER) 
+            VALUES ('$name', '$section', '$image1', '$image2', '$image3', '$description', '$stock', '$size_xs', '$size_s', '$size_m', '$size_l', '$size_xl', '$price', '$white', '$black', '$blue', '$red', '$brown', '$gray', '$green', '$orange', '$pink', '$yellow', '$provider')";
             $resultado = mysqli_query($conex, $consulta);
 
             if($resultado) {

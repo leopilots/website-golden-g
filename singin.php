@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Está es una empresa dedicada al dropshipping.">
-    <link rel="icon" type="image/ico" href="img/brand/favicon.ico">
+    <link rel="icon" type="image/ico" href="http://localhost/goldeng/img/brand/favicon.ico">
     <title>Golden G | Registro</title>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
@@ -27,6 +27,12 @@
         ?>
         <div class="offer">
             <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div class="offer">
+            <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
         <?php
     }
