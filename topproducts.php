@@ -37,13 +37,14 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <!-- offer -->
     <?php
-    if($_SESSION['user_firstbuy'] == 0) {
+    if (!isset($_SESSION['user_id'])) {
         ?>
         <div class="offer">
             <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
         <?php
-    } else {
+    }
+    else if ($_SESSION['user_firstbuy'] == 1) {
         ?>
         <div class="offer">
             <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>
@@ -91,106 +92,31 @@ if (!isset($_SESSION['user_id'])) {
         </div>
 
         <div class="catalog-container" id="catalogContainer">
-            <div class="top-p" data-name="Camiseta Antisocial Media Club">
-                <a href="http://localhost/goldeng/product/product1.php">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S52c4feac78a0485fb00ad12abb1cd3c3S/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp" alt="Producto 1">
-                    <span class="offer">En Oferta</span>
-                </a>
-                <div class="info">
-                    <span class="price">€96.00</span>
-                    <p>Camiseta Antisocial Media Club</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="Jeans Cargo para mujer">
-                <a href="producto2.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sf180df1a5b6c44c8a2a81c54401faa962/Jeans-Retro-y2k-Harajuku-High-Street-Jeans-sueltos-con-bolsillo-de-Hip-Hop-para-hombres-y.jpg_.webp" alt="Producto 2">
-                    <span class="offer">En Oferta</span>
-                </a>
-                <div class="info">
-                    <span class="price">€80.00</span>
-                    <p>Jeans Cargo para mujer</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="Jacket Varsity">
-                <a href="producto3.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S71c58d08f19d4ac4943f4b7972a2b9dep/Chaqueta-de-b-isbol-con-capucha-para-hombre-y-mujer-abrigo-grueso-y-c-lido-con.jpg_.webp" alt="Producto 3">
-                    <span class="offer">En Oferta</span>
-                </a>
-                <div class="info">
-                    <span class="price">€160.00</span>
-                    <p>Jacket Varsity</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="Sueter blanco para mujer">
-                <a href="producto4.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/H4be55873dea14405bee18ca1a622b4975.jpg_640x640.jpg_.webp" alt="Producto 4">
-                    <!-- <span class="offer">En Oferta</span> -->
-                </a>
-                <div class="info">
-                    <span class="price">€19.99</span>
-                    <p>Sueter blanco para mujer</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="Chaqueta universitaria con letras bordadas para hombre y mujer">
-                <a href="producto5.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sbcf421a5a52f4c3b8991977d05cf3af6i/Chaqueta-universitaria-con-letras-bordadas-para-hombre-y-mujer-chaqueta-de-b-isbol-de-Hip-Hop.jpg_.webp" alt="Producto 5">
-                    <!-- <span class="offer">En Oferta</span> -->
-                </a>
-                <div class="info">
-                    <span class="price">€19.99</span>
-                    <p>Chaqueta universitaria con letras bordadas para hombre y mujer</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="Sturniolo-sudaderas con capucha de Triplets para hombre y mujer">
-                <a href="producto6.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S6bf3299ef24f4d0c9df63a949cae2edbV/Sturniolo-sudaderas-con-capucha-de-Triplets-para-hombre-y-mujer-ropa-de-calle-informal-con-estampado.jpg_.webp" alt="Producto 6">
-                    <!-- <span class="offer">En Oferta</span> -->
-                </a>
-                <div class="info">
-                    <span class="price">€59.99</span>
-                    <p>Sturniolo-sudaderas con capucha de Triplets para hombre y mujer</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="Camiseta de estilo Harajuku Y2K para hombre">
-                <a href="producto7.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0f5de2d21d554b16a0a4071265a38e78o/Camiseta-de-estilo-Harajuku-Y2K-para-hombre-ropa-de-calle-Vintage-Popular-Hip-Hop-informal-Joker.jpg_.webp" alt="Producto 7">
-                    <!-- <span class="offer">En Oferta</span> -->
-                </a>
-                <div class="info">
-                    <span class="price">€34.99</span>
-                    <p>Camiseta de estilo Harajuku Y2K para hombre</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="EE-pantalones cortos deportivos para hombre">
-                <a href="producto8.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5b0ba22da0bc4a4e87059b7cbc431c83X/EE-pantalones-cortos-deportivos-para-hombre-shorts-informales-con-dise-o-de-la-ciudad-de-Nueva.jpg_.webp" alt="Producto 8">
-                    <span class="spent">Agotado</span>
-                </a>
-                <div class="info">
-                    <span class="price">€44.99</span>
-                    <p>EE-pantalones cortos deportivos para hombre</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="aop & Za-falda de cintura alta para mujer">
-                <a href="producto9.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S829e2a5f7eda4709bff5c7031acfcd08K/Taop-Za-falda-de-cintura-alta-para-mujer-prenda-holgada-e-informal-vers-til-de-longitud.jpg_.webp" alt="Producto 9">
-                    <!-- <span class="offer">En Oferta</span> -->
-                </a>
-                <div class="info">
-                    <span class="price">€39.99</span>
-                    <p>aop & Za-falda de cintura alta para mujer</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="Sudadera con capucha de Jake Webber Johnnie Guilbert Merch para hombre y mujer">
-                <a href="producto10.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S428cd6ab22524a91b74b5ae7b732a736v/Sudadera-con-capucha-de-Jake-Webber-Johnnie-Guilbert-Merch-para-hombre-y-mujer-Jersey-Unisex-ch.jpg_.webp" alt="Producto 10">
-                    <span class="spent">Agotado</span>
-                </a>
-                <div class="info">
-                    <span class="price">€54.99</span>
-                    <p>Sudadera con capucha de Jake Webber Johnnie Guilbert Merch para hombre y mujer</p>
-                </div>
-            </div>
+            <?php
+            include("php/con_db.php");
+
+            $sql = "SELECT * FROM products";
+            $result = mysqli_query($conex, $sql);
+
+            for ($i = 0; $i < $result->num_rows; $i++) {
+                $row = $result->fetch_assoc();
+                if($row['SALES'] > 10) {
+                    ?>
+                    <div class="top-p" data-name="<?php echo htmlspecialchars($row['NAME']); ?>">
+                        <?php echo "<a href='http://localhost/goldeng/product/{$row['ID']}.php'>"; ?>
+                            <img src="<?php echo htmlspecialchars($row['IMAGE']); ?>" alt="Producto">
+                            <?php if($row['OFFER'] == 1) { ?> <span class="offer">En Oferta</span> <?php } ?>
+                            <?php if($row['STOCK'] == 0) { ?> <span class="spent">Agotado</span> <?php } ?>
+                        </a>
+                        <div class="info">
+                            <span class="price">€<?php echo htmlspecialchars($row['PRICE']); ?></span>
+                            <p><?php echo htmlspecialchars($row['DESCRIPTION']); ?></p>
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
     </main>
     <!-- footer -->

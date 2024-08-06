@@ -37,13 +37,14 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <!-- offer -->
     <?php
-    if($_SESSION['user_firstbuy'] == 0) {
+    if (!isset($_SESSION['user_id'])) {
         ?>
         <div class="offer">
             <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
         <?php
-    } else {
+    }
+    else if ($_SESSION['user_firstbuy'] == 1) {
         ?>
         <div class="offer">
             <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>
@@ -90,26 +91,31 @@ if (!isset($_SESSION['user_id'])) {
         </div>
         <h2>ROPA DE HOMBRE</h2>
         <div class="catalog-container" id="catalogContainer">
-            <div class="top-p" data-name="Camiseta Antisocial Media Club">
-                <a href="http://localhost/goldeng/product/product1.php">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S52c4feac78a0485fb00ad12abb1cd3c3S/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp" alt="Producto 1">
-                    <span class="offer">En Oferta</span>
-                </a>
-                <div class="info">
-                    <span class="price">€96.00</span>
-                    <p>Camiseta Antisocial Media Club</p>
-                </div>
-            </div>
-            <div class="top-p" data-name="Sudadera con capucha de Jake Webber Johnnie Guilbert Merch para hombre y mujer">
-                <a href="producto10.html">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S428cd6ab22524a91b74b5ae7b732a736v/Sudadera-con-capucha-de-Jake-Webber-Johnnie-Guilbert-Merch-para-hombre-y-mujer-Jersey-Unisex-ch.jpg_.webp" alt="Producto 10">
-                    <span class="spent">Agotado</span>
-                </a>
-                <div class="info">
-                    <span class="price">€54.99</span>
-                    <p>Sudadera con capucha de Jake Webber Johnnie Guilbert Merch para hombre y mujer</p>
-                </div>
-            </div>
+            <?php
+            include("php/con_db.php");
+
+            $sql = "SELECT * FROM products";
+            $result = mysqli_query($conex, $sql);
+
+            for ($i = 0; $i < $result->num_rows; $i++) {
+                $row = $result->fetch_assoc();
+                if($row['SECTION'] == 1 || $row['SECTION'] == 3) {
+                    ?>
+                    <div class="top-p" data-name="<?php echo htmlspecialchars($row['NAME']); ?>">
+                        <?php echo "<a href='http://localhost/goldeng/product/{$row['ID']}.php'>"; ?>
+                            <img src="<?php echo htmlspecialchars($row['IMAGE']); ?>" alt="Producto">
+                            <?php if($row['OFFER'] == 1) { ?> <span class="offer">En Oferta</span> <?php } ?>
+                            <?php if($row['STOCK'] == 0) { ?> <span class="spent">Agotado</span> <?php } ?>
+                        </a>
+                        <div class="info">
+                            <span class="price">€<?php echo htmlspecialchars($row['PRICE']); ?></span>
+                            <p><?php echo htmlspecialchars($row['DESCRIPTION']); ?></p>
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+            ?>
         </div>
     </main>
     <!-- footer -->

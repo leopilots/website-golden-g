@@ -6,7 +6,7 @@ main {
 
 .product-container {
     width: 60%;
-    margin: 40px auto;
+    margin: 50px auto;
     display: flex;
     padding: 20px;
 }

@@ -37,19 +37,21 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <!-- offer -->
     <?php
-    if($_SESSION['user_firstbuy'] == 0) {
+    if (!isset($_SESSION['user_id'])) {
         ?>
         <div class="offer">
             <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
         <?php
-    } else {
+    }
+    else if ($_SESSION['user_firstbuy'] == 1) {
         ?>
         <div class="offer">
             <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>
         </div>
         <?php
     }
+    ?>
     ?>
     <!-- header -->
     <header>

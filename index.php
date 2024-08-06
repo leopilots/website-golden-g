@@ -34,15 +34,16 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/responsive.css">
 </head>
 <body>
-    <!-- offer -->
-    <?php
-    if($_SESSION['user_firstbuy'] == 0) {
+   <!-- offer -->
+   <?php
+    if (!isset($_SESSION['user_id'])) {
         ?>
         <div class="offer">
             <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
         <?php
-    } else {
+    }
+    else if ($_SESSION['user_firstbuy'] == 1) {
         ?>
         <div class="offer">
             <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>

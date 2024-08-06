@@ -47,7 +47,7 @@ if (!isset($_SESSION['user_id'])) {
             if($_SESSION['user_admin'] > 1) {
                 ?>
                 <li>
-                    <a href="#">Nuevo Producto</a>
+                    <a href="http://localhost/goldeng/admin/createproduct.php">Nuevo Producto</a>
                 </li>
                 <?php
             }

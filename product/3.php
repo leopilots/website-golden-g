@@ -1,5 +1,17 @@
 <?php
+include '../php/con_db.php';
 session_start();
+
+// Obtiene la ruta completa del archivo y luego le quita la extensión
+$filePath = $_SERVER['PHP_SELF'];
+$fileNameWithExtension = basename($filePath);
+$fileNameWithoutExtension = pathinfo($fileNameWithExtension, PATHINFO_FILENAME);
+
+// Product info
+$sqlproduct = "SELECT * FROM products WHERE ID = $fileNameWithoutExtension";
+$resultproduct = mysqli_query($conex, $sqlproduct);
+
+$row = mysqli_fetch_assoc($resultproduct);
 
 if (!isset($_SESSION['user_id'])) {
     ?>
@@ -26,13 +38,13 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Está es una empresa dedicada al dropshipping.">
     <link rel="icon" type="image/ico" href="img/brand/favicon.ico">
-    <title>Golden G | Ropa de Mujer</title>
+    <title>Golden G | <?php echo htmlspecialchars($row['NAME']); ?></title>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/products.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/goldeng/assets/css/1-product.css">
 </head>
 <body>
     <!-- offer -->
@@ -86,38 +98,45 @@ if (!isset($_SESSION['user_id'])) {
         </ul>
     </nav>
     <main>
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Buscar productos" onkeyup="filterProducts()">
-        </div>
-        <h2>ROPA DE MUJER</h2>
-        <div class="catalog-container" id="catalogContainer">
-            <?php
-            include("php/con_db.php");
-
-            $sql = "SELECT * FROM products";
-            $result = mysqli_query($conex, $sql);
-
-            for ($i = 0; $i < $result->num_rows; $i++) {
-                $row = $result->fetch_assoc();
-                if($row['SECTION'] == 2 || $row['SECTION'] == 3) {
-                    ?>
-                    <div class="top-p" data-name="<?php echo htmlspecialchars($row['NAME']); ?>">
-                        <?php echo "<a href='http://localhost/goldeng/product/{$row['ID']}.php'>"; ?>
-                            <img src="<?php echo htmlspecialchars($row['IMAGE']); ?>" alt="Producto">
-                            <?php if($row['OFFER'] == 1) { ?> <span class="offer">En Oferta</span> <?php } ?>
-                            <?php if($row['STOCK'] == 0) { ?> <span class="spent">Agotado</span> <?php } ?>
-                        </a>
-                        <div class="info">
-                            <span class="price">€<?php echo htmlspecialchars($row['PRICE']); ?></span>
-                            <p><?php echo htmlspecialchars($row['DESCRIPTION']); ?></p>
-                        </div>
-                    </div>
-                    <?php
-                }
-            }
-            ?>
+        <div class="product-container">
+            <section class="product-gallery">
+                <div class="thumbnail-container">
+                    <img src="<?php echo htmlspecialchars($row['IMAGE']); ?>" alt="Miniatura 1" class="thumbnail" data-full="<?php echo htmlspecialchars($row['IMAGE']); ?>">
+                    <?php if(strlen($row['IMAGE2']) >= 1) { ?> <img src="<?php echo htmlspecialchars($row['IMAGE2']); ?>" alt="Miniatura 2" class="thumbnail" data-full="<?php echo htmlspecialchars($row['IMAGE2']); ?>"> <?php } ?>
+                    <?php if(strlen($row['IMAGE3']) >= 1) { ?> <img src="<?php echo htmlspecialchars($row['IMAGE3']); ?>" alt="Miniatura 3" class="thumbnail" data-full="<?php echo htmlspecialchars($row['IMAGE3']); ?>"> <?php } ?>
+                </div>
+                <div class="main-image-container">
+                    <img id="main-image" src="<?php echo htmlspecialchars($row['IMAGE']); ?>" alt="Imagen principal del producto">
+                </div>
+            </section>
+            <section class="product-details">
+                <h2><?php echo htmlspecialchars($row['NAME']); ?></h2>
+                <p class="price">€<?php echo htmlspecialchars($row['PRICE']); ?></p>
+                <p class="description"><?php echo htmlspecialchars($row['DESCRIPTION']); ?></p>
+                <form>
+                    <label for="size">Talla:</label>
+                    <select id="size" name="size">
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option> 
+                    </select>
+                    <div class="details-space"></div>
+                    <label for="color">Color:</label>
+                    <select id="color" name="color">
+                        <option value="negro">Negro</option>
+                        <option value="blanco">Blanco</option>
+                    </select>
+                    <div class="details-space"></div>
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" id="quantity" name="quantity" value="1" min="1">
+                    <div class="details-space"></div>
+                    <button type="submit">Añadir al carrito</button>
+                </form>
+            </section>
         </div>
     </main>
+    
     <!-- footer -->
     <footer> 
         <div class="footer-back">
@@ -129,7 +148,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </footer>
     <!-- javascript -->
-    <script src="http://localhost/goldeng/assets/js/products.js"></script>
+    <script src="http://localhost/goldeng/assets/js/1-product.js"></script>
     <script src="http://localhost/goldeng/assets/js/main.js"></script>
 </body>
 </html>

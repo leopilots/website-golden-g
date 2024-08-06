@@ -1,5 +1,17 @@
 <?php
+include '../php/con_db.php';
 session_start();
+
+// Obtiene la ruta completa del archivo y luego le quita la extensión
+$filePath = $_SERVER['PHP_SELF'];
+$fileNameWithExtension = basename($filePath);
+$fileNameWithoutExtension = pathinfo($fileNameWithExtension, PATHINFO_FILENAME);
+
+// Product info
+$sqlproduct = "SELECT * FROM products WHERE ID = $fileNameWithoutExtension";
+$resultproduct = mysqli_query($conex, $sqlproduct);
+
+$row = mysqli_fetch_assoc($resultproduct);
 
 if (!isset($_SESSION['user_id'])) {
     ?>
@@ -26,7 +38,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Está es una empresa dedicada al dropshipping.">
     <link rel="icon" type="image/ico" href="img/brand/favicon.ico">
-    <title>Golden G | Nombre del Producto</title>
+    <title>Golden G | <?php echo htmlspecialchars($row['NAME']); ?></title>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
     <!-- css -->
@@ -37,13 +49,14 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <!-- offer -->
     <?php
-    if($_SESSION['user_firstbuy'] == 0) {
+    if (!isset($_SESSION['user_id'])) {
         ?>
         <div class="offer">
             <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
         <?php
-    } else {
+    }
+    else if ($_SESSION['user_firstbuy'] == 1) {
         ?>
         <div class="offer">
             <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>
@@ -88,18 +101,18 @@ if (!isset($_SESSION['user_id'])) {
         <div class="product-container">
             <section class="product-gallery">
                 <div class="thumbnail-container">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S52c4feac78a0485fb00ad12abb1cd3c3S/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp" alt="Miniatura 1" class="thumbnail" data-full="https://ae-pic-a1.aliexpress-media.com/kf/S52c4feac78a0485fb00ad12abb1cd3c3S/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp">
-                    <img src="https://ae-pic-a1.aliexpress-media.com/kf/S5b76cd95bda341a4a985a68791a658a8Y/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp" alt="Miniatura 2" class="thumbnail" data-full="https://ae-pic-a1.aliexpress-media.com/kf/S5b76cd95bda341a4a985a68791a658a8Y/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp">
-                    <!--<img src="https://ae-pic-a1.aliexpress-media.com/kf/Sfeb8daad08d6425c8e579ed7fd326ccey.jpg_640x640.jpg_.webp" alt="Miniatura 3" class="thumbnail" data-full="https://ae-pic-a1.aliexpress-media.com/kf/Sfeb8daad08d6425c8e579ed7fd326ccey.jpg_640x640.jpg_.webp">-->
+                    <img src="<?php echo htmlspecialchars($row['IMAGE']); ?>" alt="Miniatura 1" class="thumbnail" data-full="<?php echo htmlspecialchars($row['IMAGE']); ?>">
+                    <?php if(strlen($row['IMAGE2']) >= 1) { ?> <img src="<?php echo htmlspecialchars($row['IMAGE2']); ?>" alt="Miniatura 2" class="thumbnail" data-full="<?php echo htmlspecialchars($row['IMAGE2']); ?>"> <?php } ?>
+                    <?php if(strlen($row['IMAGE3']) >= 1) { ?> <img src="<?php echo htmlspecialchars($row['IMAGE3']); ?>" alt="Miniatura 3" class="thumbnail" data-full="<?php echo htmlspecialchars($row['IMAGE3']); ?>"> <?php } ?>
                 </div>
                 <div class="main-image-container">
-                    <img id="main-image" src="https://ae-pic-a1.aliexpress-media.com/kf/S52c4feac78a0485fb00ad12abb1cd3c3S/Camiseta-estampada-con-letras-Anti-Social-Media-Club-ropa-de-calle-con-cita-blusas-de-manga.jpg_.webp" alt="Imagen principal del producto">
+                    <img id="main-image" src="<?php echo htmlspecialchars($row['IMAGE']); ?>" alt="Imagen principal del producto">
                 </div>
             </section>
             <section class="product-details">
-                <h2>Camiseta Antisocial Media Club</h2>
-                <p class="price">€96.00</p>
-                <p class="description">Una camiseta unisex de alta calidad, ideal para ocasiones casuales y eventos informales.</p>
+                <h2><?php echo htmlspecialchars($row['NAME']); ?></h2>
+                <p class="price">€<?php echo htmlspecialchars($row['PRICE']); ?></p>
+                <p class="description"><?php echo htmlspecialchars($row['DESCRIPTION']); ?></p>
                 <form>
                     <label for="size">Talla:</label>
                     <select id="size" name="size">
