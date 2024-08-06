@@ -3,10 +3,12 @@ include("con_db.php");
 
 if(isset($_POST['register'])) 
 {
-    if(strlen($_POST['email']) >= 1 && strlen($_POST['password']) >= 1) 
+    if(strlen($_POST['email']) >= 1 && strlen($_POST['password']) >= 1 && strlen($_POST['name']) >= 1 && strlen($_POST['lastname']) >= 1) 
     {
         $email = trim($_POST['email']);
         $password = trim($_POST['password']);
+        $name = trim($_POST['name']);
+        $lastname = trim($_POST['lastname']);
 
         // Verificar si el correo ya existe
         $email = mysqli_real_escape_string($conex, $email);
@@ -28,11 +30,9 @@ if(isset($_POST['register']))
             </div>
             <?php
         } else {
-            // Si el correo no existe, insertar el nuevo usuario
-            // Generar un hash seguro para la contraseña
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-            $consulta = "INSERT INTO users(EMAIL, PASSWORD) VALUES ('$email', '$hashedPassword')";
+            $consulta = "INSERT INTO users(EMAIL, PASSWORD, NAME, LASTNAME) VALUES ('$email', '$hashedPassword', '$name', '$lastname')";
             $resultado = mysqli_query($conex, $consulta);
 
             if($resultado) {

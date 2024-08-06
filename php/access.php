@@ -21,10 +21,15 @@ if(isset($_POST['login']))
 
             // Suponiendo que estás usando password_hash para almacenar contraseñas
             if (password_verify($password, $row['PASSWORD'])) {
-                // Iniciar sesión
-                $_SESSION['user_id'] = $row['ID']; // Guarda el ID del usuario en la sesión
-                $_SESSION['user_email'] = $row['EMAIL']; // Guarda el email del usuario en la sesión
-                header('Location: ./account.php'); // Redirige a la página principal de usuario
+                // Iniciar sesión                
+                // Guarda los datos de la DB del usuario a su sesión
+                $_SESSION['user_id'] = $row['ID'];
+                $_SESSION['user_email'] = $row['EMAIL'];
+                $_SESSION['user_name'] = $row['NAME'];
+                $_SESSION['user_lastname'] = $row['LASTNAME'];
+                $_SESSION['user_admin'] = $row['ADMIN'];
+                $_SESSION['user_firstbuy'] = $row['FIRSTBUY'];
+                header('Location: http://localhost/goldeng/account.php');
                 exit();
             } else {
                 ?> 

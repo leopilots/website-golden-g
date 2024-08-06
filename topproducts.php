@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
         <div class="terms-modal-content">
             <h2>Términos y Condiciones</h2>
             <p>Por favor, lea y acepte nuestros términos y condiciones para continuar utilizando este sitio web.</p>
-            <p><a href="terms.html" target="_blank">Leer Términos y Condiciones</a></p>
+            <p><a href="http://localhost/goldeng/terms.php" target="_blank">Leer Términos y Condiciones</a></p>
             <div class="terms-modal-buttons">
                 <button id="terms-acceptBtn">Aceptar</button>
                 <button id="terms-rejectBtn">Rechazar</button>
@@ -36,11 +36,21 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
     <!-- offer -->
-    <div class="offer">
-        <div>
-            <p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p>
+    <?php
+    if($_SESSION['user_firstbuy'] == 0) {
+        ?>
+        <div class="offer">
+            <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
-    </div>
+        <?php
+    } else {
+        ?>
+        <div class="offer">
+            <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>
+        </div>
+        <?php
+    }
+    ?>
     <!-- header -->
     <header>
         <div class="header-container">
@@ -190,7 +200,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>Golden G</h2>
         </div>
         <div>
-            <a href="#">Términos y condiciones</a>
+            <a href="http://localhost/goldeng/terms.php">Términos y condiciones</a>
         </div>
     </footer>
     <!-- javascript -->

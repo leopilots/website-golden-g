@@ -43,13 +43,22 @@ if (!isset($_SESSION['user_id'])) {
             <li>
                 <a href="#">Mis compras</a>
             </li>
+            <?php
+            if($_SESSION['user_admin'] > 1) {
+                ?>
+                <li>
+                    <a href="#">Nuevo Producto</a>
+                </li>
+                <?php
+            }
+            ?>
             <li>
                 <a href="http://localhost/goldeng/php/logout.php">Cerrar sesión</a>
             </li>
         </ul>
     </nav>
     <main>
-        <h2>Bienvenido, este es tu correo electrónico <?php echo htmlspecialchars($_SESSION['user_email']); ?>!</h2>
+        <h2>Bienvenido, <?php echo htmlspecialchars($_SESSION['user_name']); ?>!. Esperemos que estés contento con nuestro servicio.</h2>
     </main>
     <!-- footer -->
     <footer> 
@@ -58,7 +67,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>Golden G</h2>
         </div>
         <div>
-            <a href="#">Términos y condiciones</a>
+            <a href="http://localhost/goldeng/terms.php">Términos y condiciones</a>
         </div>
     </footer>
     <!-- javascript -->

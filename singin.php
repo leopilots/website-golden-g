@@ -15,11 +15,21 @@
 </head>
 <body>
     <!-- offer -->
-    <div class="offer">
-        <div>
-            <p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p>
+    <?php
+    if($_SESSION['user_firstbuy'] == 0) {
+        ?>
+        <div class="offer">
+            <div><p>PROMOCIÓN: ¡Disfruta de envío gratis en tu primera compra!</p></div>
         </div>
-    </div>
+        <?php
+    } else {
+        ?>
+        <div class="offer">
+            <div><p>NO HAY PROMOCIONES ACTUALMENTE.</p></div>
+        </div>
+        <?php
+    }
+    ?>
     <!-- header -->
     <header>
         <div class="header-container">
@@ -58,8 +68,10 @@
         <div class="register-main">
             <form method="post">
                 <h1>Registro</h1>
-                <input type="email" name="email" placeholder="Correo electrónico">
-                <input type="password" name="password" placeholder="Contraseña">
+                <input class="register-n" type="text" name="name" placeholder="Nombre" maxlength="50">
+                <input class="register-n" type="text" name="lastname" placeholder="Apellido" maxlength="50">
+                <input type="email" name="email" placeholder="Correo electrónico" maxlength="255">
+                <input type="password" name="password" placeholder="Contraseña" minlength="8" maxlength="50">
                 <input type="submit" name="register" value="Registrarse">
                 <p style="text-align: center; color: #fff; margin-top: 20px;" >¿Ya tienes una cuenta? Puedes iniciar sesión <a style="color: #ccc" href="./login.php">aquí</a>.</p>
             </form>
@@ -72,7 +84,7 @@
             <h2>Golden G</h2>
         </div>
         <div>
-            <a href="#">Términos y condiciones</a>
+            <a href="http://localhost/goldeng/terms.php">Términos y condiciones</a>
         </div>
     </footer>
     <!-- javascript -->
