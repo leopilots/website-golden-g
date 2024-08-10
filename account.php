@@ -38,7 +38,7 @@ if (!isset($_SESSION['user_id'])) {
                 <a href="http://localhost/goldeng/">Inicio</a>
             </li>
             <li>
-                <a href="#">Mi Carrito</a>
+                <a href="http://localhost/goldeng/mycart.php">Mi Carrito</a>
             </li>
             <li>
                 <a href="#">Mis compras</a>

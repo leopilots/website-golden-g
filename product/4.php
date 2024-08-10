@@ -37,7 +37,7 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Está es una empresa dedicada al dropshipping.">
-    <link rel="icon" type="image/ico" href="img/brand/favicon.ico">
+    <link rel="icon" type="image/ico" href="http://localhost/goldeng/img/brand/favicon.ico">
     <title>Golden G | <?php echo htmlspecialchars($row['NAME']); ?></title>
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/db90717a15.js" crossorigin="anonymous"></script>
@@ -119,7 +119,12 @@ if (!isset($_SESSION['user_id'])) {
                 <h2><?php echo htmlspecialchars($row['NAME']); ?></h2>
                 <p class="price">€<?php echo htmlspecialchars($row['PRICE']); ?></p>
                 <p class="description"><?php echo htmlspecialchars($row['DESCRIPTION']); ?></p>
-                <form>
+                <form method="post" action="../php/cart-product.php">
+                    <!-- Campos ocultos para pasar los datos del producto -->
+                    <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($row['NAME']); ?>">
+                    <input type="hidden" name="product_image" value="<?php echo htmlspecialchars($row['IMAGE']); ?>">
+                    <input type="hidden" name="product_file_name" value="<?php echo htmlspecialchars($fileNameWithExtension); ?>">
+                    <input type="hidden" name="price" value="<?php echo htmlspecialchars($row['PRICE']); ?>">
                     <label for="size">Talla:</label>
                     <select id="size" name="size">
                         <?php if($row['SIZE_XS'] >= 1) { ?> <option value="xs">XS</option> <?php } ?>
@@ -131,23 +136,23 @@ if (!isset($_SESSION['user_id'])) {
                     <div class="details-space"></div>
                     <label for="color">Color:</label>
                     <select id="color" name="color">
-                        <?php if($row['WHITE'] == 1) { ?> <option value="white">Blanco</option> <?php } ?>
-                        <?php if($row['BLACK'] == 1) { ?> <option value="black">Negro</option> <?php } ?>
-                        <?php if($row['BLUE'] == 1) { ?> <option value="negro">Azul</option> <?php } ?>
-                        <?php if($row['RED'] == 1) { ?> <option value="negro">Rojo</option> <?php } ?>
-                        <?php if($row['BROWN'] == 1) { ?> <option value="negro">Café</option> <?php } ?>
-                        <?php if($row['GRAY'] == 1) { ?> <option value="negro">Gris</option> <?php } ?>
-                        <?php if($row['GREEN'] == 1) { ?> <option value="negro">Verde</option> <?php } ?>
-                        <?php if($row['ORANGE'] == 1) { ?> <option value="negro">Naranja</option> <?php } ?>
-                        <?php if($row['PINK'] == 1) { ?> <option value="negro">Rosado</option> <?php } ?>
-                        <?php if($row['YELLOW'] == 1) { ?> <option value="negro">Amarillo</option> <?php } ?>
+                        <?php if($row['WHITE'] == 1) { ?> <option value="Blanco">Blanco</option> <?php } ?>
+                        <?php if($row['BLACK'] == 1) { ?> <option value="Negro">Negro</option> <?php } ?>
+                        <?php if($row['BLUE'] == 1) { ?> <option value="Azul">Azul</option> <?php } ?>
+                        <?php if($row['RED'] == 1) { ?> <option value="Rojo">Rojo</option> <?php } ?>
+                        <?php if($row['BROWN'] == 1) { ?> <option value="Café">Café</option> <?php } ?>
+                        <?php if($row['GRAY'] == 1) { ?> <option value="Gris">Gris</option> <?php } ?>
+                        <?php if($row['GREEN'] == 1) { ?> <option value="Verde">Verde</option> <?php } ?>
+                        <?php if($row['ORANGE'] == 1) { ?> <option value="Naranja">Naranja</option> <?php } ?>
+                        <?php if($row['PINK'] == 1) { ?> <option value="Rosado">Rosado</option> <?php } ?>
+                        <?php if($row['YELLOW'] == 1) { ?> <option value="Amarillo">Amarillo</option> <?php } ?>
                     </select>
                     <div class="details-space"></div>
                     <?php if($row['STOCK'] >= 1) { ?>
-                    <label for="quantity">Cantidad:</label>
-                    <input type="number" id="quantity" name="quantity" value="1" min="1">
-                    <div class="details-space"></div>
-                    <button type="submit">Añadir al carrito</button>
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1">
+                        <div class="details-space"></div>
+                        <button type="submit" name="cart-product">Añadir al carrito</button>
                     <?php } ?>
                 </form>
             </section>
